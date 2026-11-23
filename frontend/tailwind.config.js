@@ -1,0 +1,1 @@
+export default {content:['./index.html','./src/**/*.{js,jsx}'],theme:{extend:{colors:{ink:'#181b1a',panel:'#222625',line:'#343a37',leaf:'#3ddc84'},fontFamily:{sans:['Barlow','system-ui','sans-serif'],head:['"Barlow Condensed"','Barlow','sans-serif']}}}}

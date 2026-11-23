@@ -1,0 +1,3 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{font-family:Barlow,system-ui,sans-serif}
+:focus-visible{outline:2px solid #3ddc84;outline-offset:2px}
