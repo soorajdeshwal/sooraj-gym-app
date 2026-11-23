@@ -1,8 +1,11 @@
 import {useState,useEffect,useCallback} from 'react';
 import {BarChart,Bar,XAxis,YAxis,Tooltip,ResponsiveContainer} from 'recharts';
 
-const api=async(p,o={})=>{
-  const r=await fetch('/api'+p,{...o,headers:{'Content-Type':'application/json',Authorization:'Bearer '+localStorage.token},body:o.body&&JSON.stringify(o.body)});
+
+  const BASE='https://sooraj-gym-app.'+'onrender.com'+'/api';
+  const api=async(p,o={})=>{
+    const r=await fetch(BASE+p,{...o,headers:{'Content-Type':'application/json',Authorization:'Bearer '+localStorage.token},body:o.body&&JSON.stringify(o.body)});
+
   const d=await r.json().catch(()=>({}));
   if(r.status===401&&localStorage.token){localStorage.clear();location.reload()}
   if(!r.ok)throw new Error(d.error||'Request failed');return d;
